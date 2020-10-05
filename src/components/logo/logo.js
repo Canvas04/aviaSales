@@ -1,11 +1,13 @@
 import React from "react";
-import logo from "./Plane.svg";
+import logo from "./Logo.svg";
+import classes from './logo.module.scss';
+const {logo_block} = classes;
 
 export default function Logo() {
   return (
     <>
-      <div className='logo-block'>
-        <img src={logo} alt="logo" width={200} height={200} />
+      <div className={logo_block}>
+        <img src={logo} alt="logo" width={60} height={60} />
       </div>
     </>
   );
