@@ -11,4 +11,3 @@ const App = () => {
   </main>;
 };
 ReactDom.render(<App />, document.querySelector("#root"));
-// Начинай делать лого
