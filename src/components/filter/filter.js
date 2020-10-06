@@ -9,7 +9,7 @@ export default function Filter() {
   return (
     <div className={filter}>
       <aside className={aside}>
-        <h1 className={header}>Количество пересадок</h1>
+        <h1 className={header}>КОЛИЧЕСТВО ПЕРЕСАДОК</h1>
         <Checkbox label={"Все"} />
         <Checkbox label={"Без пересадок"} />
         <Checkbox label={"1 пересадка"} />

@@ -4,7 +4,7 @@ const {labelText} = classes;
 
 export default function Checkbox({ label }) {
   return (
-    <div className="form-check">
+    <div className="form-check" style={{marginBottom: '20px'}}>
       <input
         className="form-check-input"
         type="checkbox"

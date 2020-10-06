@@ -20,7 +20,7 @@ export default function TicketListItem() {
               <p>21ч 15м</p>
           </span>
           <span>
-              <h4 className={minorHeader}>2 пересадки</h4>
+              <h4 className={minorHeader}>2 ПЕРЕСАДКИ</h4>
               <p>HKG,JNB</p>
           </span>
       </div>
@@ -34,7 +34,7 @@ export default function TicketListItem() {
               <p>21ч 15м</p>
           </span>
           <span>
-              <h4 className={minorHeader}>2 пересадки</h4>
+              <h4 className={minorHeader}>2 ПЕРЕСАДКИ</h4>
               <p>HKG,JNB</p>
           </span>
       </div>
