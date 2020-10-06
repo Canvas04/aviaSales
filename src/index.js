@@ -6,6 +6,7 @@ import Logo from './components/logo';
 import Filter from "./components/filter/filter";
 const {main} = classes;
 
+
 const App = () => {
   return <main className={main}>
       <Logo />
