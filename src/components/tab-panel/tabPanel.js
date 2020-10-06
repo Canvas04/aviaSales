@@ -3,6 +3,7 @@ import {Tabs} from 'antd';
 import classes from './tabPanel.module.scss';
 import './tap-panel.scss';
 import Tab1 from '../tab1';
+import Tab2 from '../tab2';
 const {str} = classes;
 const {TabPane} = Tabs;
 
@@ -13,7 +14,7 @@ export default function TabPanel () {
         <Tab1 />
         </TabPane>
         <TabPane tab="Caмый дешевый" key="2">
-          Content of card tab 2
+          <Tab2 />
         </TabPane>
         
       </Tabs>
