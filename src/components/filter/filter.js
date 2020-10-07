@@ -1,11 +1,21 @@
-import Search from "antd/lib/input/Search";
 import React from "react";
 import TabPanel from "../tab-panel";
 import Checkbox from "./checkbox/";
 import classes from "./filter.module.scss";
+import {useMediaQuery } from 'react-responsive';
 const { filter, header, aside ,search} = classes;
 
 export default function Filter() {
+  const mobileScreen = useMediaQuery({ query: "(max-width: 567px)" });
+
+  const laptopScreen = useMediaQuery({ query: "(min-width: 567px)" });
+  return (
+    <>
+    <FilterLg />
+    </>
+  );
+}
+function FilterLg() {
   return (
     <div className={filter}>
       <aside className={aside}>
@@ -21,4 +31,9 @@ export default function Filter() {
       </aside>
     </div>
   );
+}
+function FilterSm () {
+  return <>
+  
+  </>
 }
