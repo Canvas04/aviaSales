@@ -21,5 +21,23 @@
       display: flex;
       flex-direction: row;
    }
+.filterSm {
+   display:flex;
+   flex-direction: column;
+}
 
+.asideSm {
+   display: flex;
+   flex-direction: column;
+   padding: 20px;
+   background-color: #ffffff;
+   margin-right: 0;
+   margin-bottom: 20px;
+   max-height: 265px;
+}
 
+.searchSm {
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+}
