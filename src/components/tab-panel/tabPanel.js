@@ -5,7 +5,6 @@ import {connect} from 'react-redux';
 import './tap-panel.scss';
 import Tab1 from '../tab1';
 import Tab2 from '../tab2';
-import select from '../../action';
 
 const {TabPane} = Tabs;
 

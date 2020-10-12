@@ -20,11 +20,7 @@ function FilterLg() {
     <div className={filter}>
       <aside className={aside}>
         <h1 className={header}>КОЛИЧЕСТВО ПЕРЕСАДОК</h1>
-        <Checkbox label={"Все"} />
-        <Checkbox label={"Без пересадок"} />
-        <Checkbox label={"1 пересадка"} />
-        <Checkbox label={"2 пересадки"} />
-        <Checkbox label={"3 пересадки"} />
+        <Checkbox />
       </aside>
       <aside className={search}>
           <TabPanel />
@@ -37,11 +33,11 @@ function FilterSm () {
  <div className={filterSm}>
       <aside className={asideSm}>
         <h1 className={header}>КОЛИЧЕСТВО ПЕРЕСАДОК</h1>
-        <Checkbox label={"Все"} />
-        <Checkbox label={"Без пересадок"} />
-        <Checkbox label={"1 пересадка"} />
-        <Checkbox label={"2 пересадки"} />
-        <Checkbox label={"3 пересадки"} />
+        <Checkbox  />
+        <Checkbox  />
+        <Checkbox  />
+        <Checkbox  />
+        <Checkbox />
       </aside>
       <aside className={searchSm}>
           <TabPanel />
