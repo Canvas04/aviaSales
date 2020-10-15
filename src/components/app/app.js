@@ -6,6 +6,7 @@ import Filter from "../filter";
 import { useMediaQuery } from "react-responsive";
 import { connect } from "react-redux";
 
+const MyContext = React.createContext()
 const { mainLg, mainSm } = classes;
 
 function MainLg() {
@@ -25,7 +26,7 @@ function MainSM() {
   );
 }
 const App = ({ checkboxes }) => {
-  const MyContext = React.createContext(checkboxes)
+  
 
   const mobileScreen = useMediaQuery({ query: "(max-width: 567px)" });
   const laptopScreen = useMediaQuery({ query: "(min-width: 567px)" });
@@ -46,4 +47,6 @@ const mapStateToProps = (store) => {
     checkboxes,
   };
 };
+
+export {MyContext};
 export default connect(mapStateToProps)(App);
