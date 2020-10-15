@@ -1,35 +1,49 @@
-import React from 'react';
+import React from "react";
 import "normalize.css";
-import classes from './index.module.scss';
-import Logo from '../logo';
-import Filter from '../filter';
-import {useMediaQuery} from 'react-responsive';
+import classes from "./index.module.scss";
+import Logo from "../logo";
+import Filter from "../filter";
+import { useMediaQuery } from "react-responsive";
+import { connect } from "react-redux";
 
-const { mainLg ,mainSm} = classes;
+const { mainLg, mainSm } = classes;
 
 function MainLg() {
-    return (
-      <main className={mainLg}>
-        <Logo />
-        <Filter />
-      </main>
-    );
-  }
-  function MainSM() {
-    return (
-      <main className={mainSm}>
-        <Logo />
-        <Filter />
-      </main>
-    );
-  }
-  const App = () => {
-    const mobileScreen = useMediaQuery({ query: "(max-width: 567px)" });
-    const laptopScreen = useMediaQuery({ query: "(min-width: 567px)" });
-    return <>
-    {laptopScreen && <MainLg />}
-    {mobileScreen && <MainSM />}
-    </>;
-  };
+  return (
+    <main className={mainLg}>
+      <Logo />
+      <Filter />
+    </main>
+  );
+}
+function MainSM() {
+  return (
+    <main className={mainSm}>
+      <Logo />
+      <Filter />
+    </main>
+  );
+}
+const App = ({ checkboxes }) => {
+  const MyContext = React.createContext(checkboxes)
 
-  export default App;
+  const mobileScreen = useMediaQuery({ query: "(max-width: 567px)" });
+  const laptopScreen = useMediaQuery({ query: "(min-width: 567px)" });
+  return (
+    <>
+      <MyContext.Provider value={checkboxes}>
+        {" "}
+        {laptopScreen && <MainLg />}
+        {mobileScreen && <MainSM />}
+      </MyContext.Provider>
+    </>
+  );
+};
+
+const mapStateToProps = (store) => {
+  const { checkboxes } = store.checkboxes;
+  return {
+    checkboxes,
+  };
+};
+export default connect(mapStateToProps)(App);
