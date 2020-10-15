@@ -1,4 +1,6 @@
 import {createStore } from 'redux';
-const store =createStore(() => {},{})
+import {rootReducer,initialState} from '../reducers';
+
+const store =createStore(rootReducer,initialState)
 
 export {store};
