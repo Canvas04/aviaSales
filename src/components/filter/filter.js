@@ -7,8 +7,9 @@ import { connect } from "react-redux";
 
 const { filter, header, aside, search, filterSm, asideSm, searchSm } = classes;
 const mapStateToProps = (state) => {
+    const{checkboxes} = state.checkboxes;
   return {
-    checkboxes: state.checkboxes,
+    checkboxes,
   };
 };
 const FinishedComponentLG = connect(mapStateToProps)(FilterLg);
@@ -25,6 +26,7 @@ function Filter() {
   );
 }
 function FilterLg({ checkboxes }) {
+    
   const {all,noStops,oneStop,twoStops,threeStops} = checkboxes;
   return (
     <div className={filter}>
