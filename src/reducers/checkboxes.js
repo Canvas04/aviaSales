@@ -40,7 +40,7 @@ export default function checkReducer(state = initialState, action) {
 
 function getFiniteValue(obj) {
   function getProp(o) {
-    for (var prop in o) {
+    for (let prop in o) {
       if (typeof o[prop] === "object") {
         getProp(o[prop]);
       } else {
