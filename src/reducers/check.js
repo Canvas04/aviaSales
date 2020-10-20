@@ -31,7 +31,7 @@ const initialState = {
   export default function check(state = initialState, action) {
     switch (action.type) {
       case "PRESS_ALL":
-        console.log(state.selectAll);
+        
         if (state.selectAll) {
           let items = [...state.items];
           items = items.map((item) => {
