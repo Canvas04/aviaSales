@@ -1,6 +1,5 @@
-import {combineReducers} from 'redux';
-import checkReducer from './checkboxes';
+import { combineReducers } from "redux";
+import check from './check'
 
-export const  rootReducer = combineReducers({
-  checkboxes: checkReducer
-})
+export default combineReducers({ check});
+
