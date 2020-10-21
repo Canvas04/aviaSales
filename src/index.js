@@ -2,7 +2,7 @@ import React from "react";
 import ReactDom from "react-dom";
 import App from "./components/app";
 import { Provider } from "react-redux";
-import {createStore,applyMiddleware} from 'redux';
+import {createStore,applyMiddleware,compose} from 'redux';
 import rootReducer from './reducers';
 function loggerMiddleWare(store) {
   return function (next ) {
@@ -14,8 +14,13 @@ function loggerMiddleWare(store) {
     }
   }
 }
+const composeEnhancers =
+  typeof window === 'object' &&
+  window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?   
+    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({ }) : compose;
 
-const store = createStore(rootReducer,applyMiddleware(loggerMiddleWare))
+
+const store = createStore(rootReducer,composeEnhancers(applyMiddleware(loggerMiddleWare)))
 ReactDom.render(
   <Provider store={store}>
     <App />
@@ -23,3 +28,4 @@ ReactDom.render(
 
   document.querySelector("#root")
 );
+// Надо настроить react dev tools
