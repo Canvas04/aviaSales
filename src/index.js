@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDom from "react-dom";
-import App from "./components/app";
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware, compose } from "redux";
 import reduxThunk from 'redux-thunk';
+import App from "./components/app";
 import rootReducer from "./reducers";
 
 const loggerMiddleWare = (store) => (next) => (action) => {
