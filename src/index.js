@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDom from "react-dom";
 import { Provider } from "react-redux";
+import createSagaMiddleWare from 'redux-saga';
 import { createStore, applyMiddleware, compose } from "redux";
 import reduxThunk from 'redux-thunk';
 import App from "./components/app";
@@ -11,7 +12,7 @@ const loggerMiddleWare = (store) => (next) => (action) => {
   console.log("MiddleWare", store.getState());
   return result;
 };
-
+const sagaMiddleWare = createSagaMiddleWare();
 const composeEnhancers =
   typeof window === "object" && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
     ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({})

@@ -11,3 +11,6 @@ export function pressAll() {
     };
   }
   
+  export const loadData = () => (dispatch,getState) => {
+console.log(getState());
+  }
