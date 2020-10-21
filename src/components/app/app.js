@@ -29,7 +29,7 @@ const App = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     const getSearchId = () => dispatch(loadSearchId());
-    getSearchId()
+    getSearchId();
   })
   const mobileScreen = useMediaQuery({ query: "(max-width: 567px)" });
   const laptopScreen = useMediaQuery({ query: "(min-width: 567px)" });

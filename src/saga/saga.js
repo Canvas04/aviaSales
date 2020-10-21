@@ -1,9 +1,10 @@
 import { takeEvery, put, call } from "redux-saga/effects";
 import { LOAD_SEARCH_ID,putSearchId } from "../action";
 
-const aviaSalesUrl = "https://front-test.beta.aviasales.ru/search";
+
+export const aviaSalesUrlSearch = "https://front-test.beta.aviasales.ru/search";
 const fetchSearchId = () => {
-  return fetch(aviaSalesUrl).then((response) => response.json());
+  return fetch(aviaSalesUrlSearch).then((response) => response.json());
 };
 
 function* workerSearchId() {
