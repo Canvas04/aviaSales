@@ -2,8 +2,8 @@ import React from "react";
 import TabPanel from "../tab-panel";
 import classes from "./filter.module.scss";
 import { Checkbox } from "antd";
-import { pressAll } from "../../action";
 import { connect } from "react-redux";
+import { pressAll } from "../../action";
 import { pressOne } from "../../action";
 import  {getCheck,getCheckLabel,getCheckId} from './extra';
 
