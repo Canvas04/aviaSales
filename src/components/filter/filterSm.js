@@ -5,14 +5,11 @@ import { Checkbox } from "antd";
 import { pressAll } from "../../action";
 import { connect } from "react-redux";
 import { pressOne } from "../../action";
+import  {getCheck,getCheckLabel,getCheckId} from './extra';
+
 const { header, asideSm, filterSm, searchSm } = classes;
 
-const getCheck = (id,arr) => {
-  return arr.filter(el => el.id === id).map(el => el.checked)[0];
-}
-
 function FilterSm({stateCheck,pressAll,pressOne}) {
-  console.log(stateCheck);
   return (
     <>
       <div className={filterSm}>
@@ -23,46 +20,31 @@ function FilterSm({stateCheck,pressAll,pressOne}) {
         
         checked={getCheck(1,stateCheck)}
       >
-        {stateCheck
-          .filter((el) => el.id === 1)
-          .map((el) => el.label)
-          .join(" ")}
+        {getCheckLabel(1,stateCheck)}
       </Checkbox>
       <Checkbox
-        onChange={() => pressOne( stateCheck.filter((el) => el.id === 2).map((el) => el.id)[0])}
+        onChange={() => pressOne( getCheckId(2,stateCheck))}
         checked={getCheck(2,stateCheck)}
       >
-        {stateCheck
-          .filter((el) => el.id === 2)
-          .map((el) => el.label)
-          .join(" ")}
+        {getCheckLabel(2,stateCheck)}
       </Checkbox>
       <Checkbox
-        onChange={() => pressOne( stateCheck.filter((el) => el.id === 3).map((el) => el.id)[0])}
+        onChange={() => pressOne( getCheckId(3,stateCheck))}
         checked={getCheck(3,stateCheck)}
       >
-        {stateCheck
-          .filter((el) => el.id === 3)
-          .map((el) => el.label)
-          .join(" ")}
+        {getCheckLabel(3,stateCheck)}
       </Checkbox>
       <Checkbox
-        onChange={() => pressOne( stateCheck.filter((el) => el.id === 4).map((el) => el.id)[0])}
+        onChange={() => pressOne( getCheckId(4,stateCheck))}
         checked={getCheck(4,stateCheck)}
       >
-        {stateCheck
-          .filter((el) => el.id === 4)
-          .map((el) => el.label)
-          .join(" ")}
+        {getCheckLabel(4,stateCheck)}
       </Checkbox>
       <Checkbox
-        onChange={() => pressOne( stateCheck.filter((el) => el.id === 5).map((el) => el.id)[0])}
+        onChange={() => pressOne( getCheckId(5,stateCheck))}
         checked={getCheck(5,stateCheck)}
       >
-        {stateCheck
-          .filter((el) => el.id === 5)
-          .map((el) => el.label)
-          .join(" ")}
+        {getCheckLabel(5,stateCheck)}
       </Checkbox>
         </aside>
         <aside className={searchSm}>

@@ -5,6 +5,7 @@ import { Checkbox } from "antd";
 import { pressAll } from "../../action";
 import { connect } from "react-redux";
 import { pressOne } from "../../action";
+import  {getCheck,getCheckLabel,getCheckId} from './extra';
 
 const { filter, header, aside, search } = classes;
 
