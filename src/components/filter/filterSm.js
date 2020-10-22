@@ -7,7 +7,12 @@ import { connect } from "react-redux";
 import { pressOne } from "../../action";
 const { header, asideSm, filterSm, searchSm } = classes;
 
+const getCheck = (id,arr) => {
+  return arr.filter(el => el.id === id).map(el => el.checked)[0];
+}
+
 function FilterSm({stateCheck,pressAll,pressOne}) {
+  console.log(stateCheck);
   return (
     <>
       <div className={filterSm}>
@@ -15,9 +20,8 @@ function FilterSm({stateCheck,pressAll,pressOne}) {
           <h1 className={header}>КОЛИЧЕСТВО ПЕРЕСАДОК</h1>
           <Checkbox
         onChange={() => {pressAll();}}
-        checked={
-          stateCheck.filter((el) => el.id === 1).map((el) => el.checked)[0]
-        }
+        
+        checked={getCheck(1,stateCheck)}
       >
         {stateCheck
           .filter((el) => el.id === 1)
@@ -26,9 +30,7 @@ function FilterSm({stateCheck,pressAll,pressOne}) {
       </Checkbox>
       <Checkbox
         onChange={() => pressOne( stateCheck.filter((el) => el.id === 2).map((el) => el.id)[0])}
-        checked={
-          stateCheck.filter((el) => el.id === 2).map((el) => el.checked)[0]
-        }
+        checked={getCheck(2,stateCheck)}
       >
         {stateCheck
           .filter((el) => el.id === 2)
@@ -37,9 +39,7 @@ function FilterSm({stateCheck,pressAll,pressOne}) {
       </Checkbox>
       <Checkbox
         onChange={() => pressOne( stateCheck.filter((el) => el.id === 3).map((el) => el.id)[0])}
-        checked={
-          stateCheck.filter((el) => el.id === 3).map((el) => el.checked)[0]
-        }
+        checked={getCheck(3,stateCheck)}
       >
         {stateCheck
           .filter((el) => el.id === 3)
@@ -48,9 +48,7 @@ function FilterSm({stateCheck,pressAll,pressOne}) {
       </Checkbox>
       <Checkbox
         onChange={() => pressOne( stateCheck.filter((el) => el.id === 4).map((el) => el.id)[0])}
-        checked={
-          stateCheck.filter((el) => el.id === 4).map((el) => el.checked)[0]
-        }
+        checked={getCheck(4,stateCheck)}
       >
         {stateCheck
           .filter((el) => el.id === 4)
@@ -59,9 +57,7 @@ function FilterSm({stateCheck,pressAll,pressOne}) {
       </Checkbox>
       <Checkbox
         onChange={() => pressOne( stateCheck.filter((el) => el.id === 5).map((el) => el.id)[0])}
-        checked={
-          stateCheck.filter((el) => el.id === 5).map((el) => el.checked)[0]
-        }
+        checked={getCheck(5,stateCheck)}
       >
         {stateCheck
           .filter((el) => el.id === 5)

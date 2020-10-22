@@ -9,7 +9,7 @@ import { watchSearchId } from "./saga/saga";
 
 const loggerMiddleWare = (store) => (next) => (action) => {
   const result = next(action);
-  console.log("MiddleWare", store.getState());
+  console.log(store.getState());
   return result;
 };
 
