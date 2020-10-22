@@ -6,6 +6,7 @@ import { createStore, applyMiddleware, compose } from "redux";
 import App from "./components/app";
 import rootReducer from "./reducers";
 import { watchSearchId } from "./saga/saga";
+import { watchSearchTickets } from "./saga/loadTickets";
 
 const loggerMiddleWare = (store) => (next) => (action) => {
   const result = next(action);
@@ -20,11 +21,12 @@ const composeEnhancers =
     ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({})
     : compose;
 
-const store = createStore(
+export const store = createStore(
   rootReducer,
   composeEnhancers(applyMiddleware(loggerMiddleWare,sagaMiddleWare))
 );
 sagaMiddleWare.run(watchSearchId);
+sagaMiddleWare.run(watchSearchTickets);
 ReactDom.render(
   <Provider store={store}>
     <App />

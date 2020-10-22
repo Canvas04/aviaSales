@@ -9,7 +9,6 @@ const fetchSearchId = () => {
 
 function* workerSearchId() {
   const searchId = yield call(fetchSearchId);
-
   yield put(putSearchId(searchId));
 }
 

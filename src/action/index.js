@@ -37,6 +37,9 @@ export const loadTickets = () => {
   }
 }
 
-export const putLoadTickets  = () => {
- 
+export const putLoadTickets  = (payload) => {
+ return {
+   type: PUT_LOAD_TICKETS,
+   payload
+ }
 }

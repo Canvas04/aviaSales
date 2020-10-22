@@ -5,7 +5,7 @@ import "normalize.css";
 import classes from "./index.module.scss";
 import Logo from "../logo";
 import Filter from "../filter";
-import { loadSearchId } from "../../action";
+import { loadSearchId, loadTickets } from "../../action";
 
 const { mainLg, mainSm } = classes;
 
@@ -30,6 +30,8 @@ const App = () => {
   useEffect(() => {
     const getSearchId = () => dispatch(loadSearchId());
     getSearchId();
+    const getTickets = () => dispatch(loadTickets());
+    getTickets()
   })
   const mobileScreen = useMediaQuery({ query: "(max-width: 567px)" });
   const laptopScreen = useMediaQuery({ query: "(min-width: 567px)" });
