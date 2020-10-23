@@ -4,7 +4,7 @@ const initialState = {
   tickets: [],
 };
 
-export const loadTickets = (state = initialState, action) => {
+ const putLoadTickets = (state = initialState, action) => {
   switch (action.type) {
     case PUT_LOAD_TICKETS:
       return {...state,tickets:action.payload};
@@ -12,3 +12,4 @@ export const loadTickets = (state = initialState, action) => {
       return state;
   }
 };
+export default putLoadTickets;

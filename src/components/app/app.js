@@ -32,6 +32,7 @@ const App = () => {
     getSearchId();
     const getTickets = () => dispatch(loadTickets());
     getTickets()
+  
   })
   const mobileScreen = useMediaQuery({ query: "(max-width: 567px)" });
   const laptopScreen = useMediaQuery({ query: "(min-width: 567px)" });

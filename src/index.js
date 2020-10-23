@@ -10,7 +10,6 @@ import { watchSearchTickets } from "./saga/loadTickets";
 
 const loggerMiddleWare = (store) => (next) => (action) => {
   const result = next(action);
-  console.log(store.getState());
   return result;
 };
 
