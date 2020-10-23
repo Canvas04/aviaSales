@@ -1,7 +1,6 @@
 import React,{useEffect} from "react";
 import {useDispatch} from 'react-redux';
 import { useMediaQuery } from "react-responsive";
-import "normalize.css";
 import classes from "./index.module.scss";
 import Logo from "../logo";
 import Filter from "../filter";
