@@ -12,7 +12,7 @@ export default function TicketListItem() {
   })
   if(ticketsObj) {
     const {tickets} = ticketsObj;
-    console.log(tickets);
+    
   }
   return (
     <li className={li}>
