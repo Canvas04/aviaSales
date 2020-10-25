@@ -4,6 +4,7 @@ import {
   FETCH_ERROR_ID,
   SEARCH_URL,
 } from "../constants";
+import {fetchTickets} from './loadTickets';
 
 const requestId = () => {
   return {
@@ -28,6 +29,7 @@ export const fetchId = () => {
       (error) => console.log("Something went wrong", error)
     )
     .then(json => {
+      fetchTickets(json.searchId);
         dispatch(receiveId(json))
     })
   };
