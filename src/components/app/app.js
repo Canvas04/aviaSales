@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useMediaQuery } from "react-responsive";
-import {connnect} from 'react-redux';
 import MainLg from './mainLj';
 import MainSM from './mainSm';
 import {fetchId} from '../../action/loadSearchId';
 import {getTickets} from '../../action/loadTickets';
 
 const App = () => {
+  
   const dispatch = useDispatch();
   useEffect(() => {
    const getId = dispatch(fetchId());

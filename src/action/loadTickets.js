@@ -1,3 +1,4 @@
+
 import {
   FETCH_REQUEST_TICKETS,
   FETCH_RECEIVE_TICKETS,
@@ -5,9 +6,15 @@ import {
   TICKETS_URL,
 } from "../constants";
 
+
+
 export const fetchTickets = (id) => {
-  return fetch(`${TICKETS_URL}=${id}`)
-   
+  if(id) {
+    return fetch(`${TICKETS_URL}=${id}`);
+  }else {
+    return fetch(`${TICKETS_URL}=${localStorage.getItem('searchId')}`);
+  }
+  
 };
 
 const requestTickets = () => {
@@ -21,6 +28,7 @@ const receiveTickets = (payload) => {
   return {
     type: FETCH_RECEIVE_TICKETS,
     payload,
+    isFetching:false
   };
 };
 const errorTickets = (error) => {
@@ -28,10 +36,20 @@ const errorTickets = (error) => {
 };
 
 export const getTickets = () => {
-    return dispatch => {
-        dispatch(requestTickets())
-        return fetchTickets().then(res => res.json())
-        .then(res => dispatch(receiveTickets(res.tickets)))
-        .catch(error => dispatch(errorTickets(error.message)))
-    }
-}
+  return (dispatch) => {
+    dispatch(requestTickets());
+    return fetchTickets()
+      .then((response) =>
+        response.json().then((json) => ({ status: response.status, json }))
+      )
+      .then(({ status, json }) => {
+        if (status >= 400 ) {
+
+          dispatch(errorTickets(status));
+        }else {
+          
+          dispatch(receiveTickets(json))
+        }
+      });
+  };
+};

@@ -29,6 +29,7 @@ export const fetchId = () => {
       (error) => console.log("Something went wrong", error)
     )
     .then(json => {
+      localStorage.setItem('searchId',json.searchId)
       fetchTickets(json.searchId);
         dispatch(receiveId(json))
     })
