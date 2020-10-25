@@ -10,7 +10,6 @@ const inititialState = {
 export const loadTickets = (state = inititialState, action) => {
   switch (action.type) {
       case FETCH_RECEIVE_TICKETS:
-        console.log(state);
           return {...state,tickets: action.payload};
           default :
           return state

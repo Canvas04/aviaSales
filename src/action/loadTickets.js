@@ -43,7 +43,7 @@ export const getTickets = () => {
         response.json().then((json) => ({ status: response.status, json }))
       )
       .then(({ status, json }) => {
-        if (status >= 400 ) {
+        if (status >= 400 && status <= 500) {
 
           dispatch(errorTickets(status));
         }else {

@@ -1,9 +1,19 @@
 import React from "react";
+import {useSelector} from 'react-redux';
 import classes from "./ticketListItem.module.scss";
 import logo from "./S7 Logo.svg";
 const { li ,pricesAndLogo,content,minorHeader} = classes;
 
 export default function TicketListItem() {
+  const ticketsObj = useSelector(store => {
+    if(store.loadTickets.tickets.length !== 0) {
+      return store.loadTickets.tickets;
+    }
+  })
+  if(ticketsObj) {
+    const {tickets} = ticketsObj;
+    console.log(tickets);
+  }
   return (
     <li className={li}>
       <div className={pricesAndLogo}>
