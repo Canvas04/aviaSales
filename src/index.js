@@ -6,6 +6,7 @@ import { createStore, applyMiddleware, compose } from "redux";
 import reduxThunk from 'redux-thunk';
 import App from "./components/app";
 import rootReducer from "./reducers";
+import { fetchId } from "./action/loadSearchId";
 // import { watchSearchId } from "./saga/saga";
 // import { watchSearchTickets } from "./saga/loadTickets";
 
@@ -25,6 +26,8 @@ export const store = createStore(
   rootReducer,
   composeEnhancers(applyMiddleware(loggerMiddleWare,sagaMiddleWare,reduxThunk))
 );
+
+// store.dispatch(fetchId())
 
 ReactDom.render(
   <Provider store={store}>
