@@ -13,7 +13,7 @@
 // });
 // const viewSpeedTickets = speedTickets.slice(0, 20);
 //Функция фильтр в зависимости от цены
-const filterOnPrice = (arr) => {
+export const filterOnPrice = (arr) => {
   const copyArr = arr.slice();
   return copyArr.sort((a, b) => {
     return a.price - b.price;
@@ -21,7 +21,7 @@ const filterOnPrice = (arr) => {
 };
 //Функция фильтр в зависимости от скорости
 
-const filterOnSpeed = (arr) => {
+export const filterOnSpeed = (arr) => {
   const copyArr = arr.slice();
   return copyArr.sort((a, b) => {
     return (
@@ -47,5 +47,6 @@ export const filterOnStops = (arr, num) => {
     );
     if (stops === num) return el;
   });
+  return noStops;
 };
 

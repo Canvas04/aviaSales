@@ -6,11 +6,11 @@ import { createStore, applyMiddleware, compose } from "redux";
 import reduxThunk from "redux-thunk";
 import App from "./components/app";
 import rootReducer from "./reducers";
-import { fetchId } from "./action/loadSearchId";
-import { exampleObj } from "./reducers/filters";
+
 
 const loggerMiddleWare = (store) => (next) => (action) => {
   const result = next(action);
+  console.log(store.getState());
   return result;
 };
 
@@ -36,4 +36,3 @@ ReactDom.render(
 
   document.querySelector("#root")
 );
-
