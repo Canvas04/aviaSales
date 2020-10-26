@@ -1,14 +1,13 @@
 import React from "react";
 import ReactDom from "react-dom";
 import { Provider } from "react-redux";
-import createSagaMiddleWare from 'redux-saga';
+import createSagaMiddleWare from "redux-saga";
 import { createStore, applyMiddleware, compose } from "redux";
-import reduxThunk from 'redux-thunk';
+import reduxThunk from "redux-thunk";
 import App from "./components/app";
 import rootReducer from "./reducers";
 import { fetchId } from "./action/loadSearchId";
-// import { watchSearchId } from "./saga/saga";
-// import { watchSearchTickets } from "./saga/loadTickets";
+import { exampleObj } from "./reducers/filters";
 
 const loggerMiddleWare = (store) => (next) => (action) => {
   const result = next(action);
@@ -24,10 +23,11 @@ const composeEnhancers =
 
 export const store = createStore(
   rootReducer,
-  composeEnhancers(applyMiddleware(loggerMiddleWare,sagaMiddleWare,reduxThunk))
+  composeEnhancers(
+    applyMiddleware(loggerMiddleWare, sagaMiddleWare, reduxThunk)
+  )
 );
 
-// store.dispatch(fetchId())
 
 ReactDom.render(
   <Provider store={store}>
@@ -36,3 +36,4 @@ ReactDom.render(
 
   document.querySelector("#root")
 );
+

@@ -12,7 +12,6 @@ export default function TicketListItem() {
   })
   if(ticketsObj) {
     const {tickets} = ticketsObj;
-    
   }
   return (
     <li className={li}>
